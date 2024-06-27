@@ -40,6 +40,9 @@ Run the Script
   
 Run the script using the command:
     python mannatech.py
+
+![File-Manager-Script](https://github.com/Fshaun/automated-file-manager/assets/33252250/20845ef3-e910-43b0-b2a9-31d01cc89e4a)
+
     
 Script Details
 
