@@ -10,9 +10,9 @@ Features
   
 Requirements
 
--Python 3.x
--Access to the network location from the machine running the script
--Necessary permissions to read, write, and delete files in the specified directories
+- Python 3.x
+- Access to the network location from the machine running the script
+- Necessary permissions to read, write, and delete files in the specified directories
 
 Setup
 
@@ -31,12 +31,12 @@ Setup
 Usage
 
 Modify the Script
-  -Update the source_directory, target_directory, network_directory, and target_content variables in the script as needed.
+  - Update the source_directory, target_directory, network_directory, and target_content variables in the script as needed.
   
 Run the Script
 
-  -Open a command prompt or terminal.
-  -Navigate to the directory containing mannatech.py.
+  - Open a command prompt or terminal.
+  - Navigate to the directory containing mannatech.py.
   
 Run the script using the command:
     python mannatech.py
@@ -44,26 +44,26 @@ Run the script using the command:
 Script Details
 
 Variables
-  -source_directory: The directory containing the original Notepad files.
-  -target_directory: The directory where grouped folders will be created.
-  -network_directory: The network location where files from the ZA1 folder will be copied.
-  -target_content: The specific content to search for in the files to determine their grouping.
+  - source_directory: The directory containing the original Notepad files.
+  - target_directory: The directory where grouped folders will be created.
+  - network_directory: The network location where files from the ZA1 folder will be copied.
+  - target_content: The specific content to search for in the files to determine their grouping.
   
 Functions
 
-  -find_group_line(file_path, target_content): Reads a file and searches for the target content, returning the group name if found.
-  -sanitize_directory_name(name): Sanitizes the directory name to remove invalid characters.
-  -group_notepad_files(source_dir, target_dir, target_content): Groups Notepad files based on lines containing specific content.
-  -copy_za1_files_to_network(target_dir, network_dir): Copies files from the ZA1 folder to the network location.
-  -delete_grouped_folders(target_dir): Deletes all folders in the target directory.
+  - find_group_line(file_path, target_content): Reads a file and searches for the target content, returning the group name if found.
+  - sanitize_directory_name(name): Sanitizes the directory name to remove invalid characters.
+  - group_notepad_files(source_dir, target_dir, target_content): Groups Notepad files based on lines containing specific content.
+  - copy_za1_files_to_network(target_dir, network_dir): Copies files from the ZA1 folder to the network location.
+  - delete_grouped_folders(target_dir): Deletes all folders in the target directory.
 
 Troubleshooting
 
-  -Network Accessibility: Ensure that the network location is accessible from your machine. Try opening the network path in File Explorer to verify connectivity.
-  -Permissions: Verify that you have the necessary read/write permissions for the source, target, and network directories.
-  -Path Validation: Ensure that the paths specified in the script are correct and properly formatted.
+  - Network Accessibility: Ensure that the network location is accessible from your machine. Try opening the network path in File Explorer to verify connectivity.
+  - Permissions: Verify that you have the necessary read/write permissions for the source, target, and network directories.
+  - Path Validation: Ensure that the paths specified in the script are correct and properly formatted.
   
 Contact
 
--For further assistance, please contact the script author or your IT support team.
+- For further assistance, please contact the script author or your IT support team.
 
