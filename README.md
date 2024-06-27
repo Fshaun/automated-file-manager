@@ -1,4 +1,4 @@
-                                                                        Mannatech File Grouping and Copying Script
+## Mannatech File Grouping and Copying Script
                                                                         
 This Python script automates the process of grouping Notepad files based on specific content in the file, copying grouped files to a network location, and then deleting the grouped folders.
 
