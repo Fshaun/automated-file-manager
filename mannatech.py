@@ -1,6 +1,22 @@
 import os
 import shutil
 import string
+import win32com.client
+import datetime
+
+def download_attachments_from_outlook(email_address, source_dir):
+    """Downloads attachments from emails received from a specific email address."""
+    outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
+    inbox = outlook.GetDefaultFolder(6)  # 6 refers to the inbox
+    messages = inbox.Items
+    messages = messages.Restrict("[ReceivedTime] >= '" + (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%m/%d/%Y %H:%M %p") + "'")
+    
+    for message in messages:
+        if message.SenderEmailAddress == email_address and message.Attachments.Count > 0:
+            for attachment in message.Attachments:
+                if attachment.FileName.endswith('.txt'):
+                    attachment.SaveAsFile(os.path.join(source_dir, attachment.FileName))
+                    print(f'Saved attachment {attachment.FileName} from {email_address}')
 
 def find_group_line(file_path, target_content):
     """Finds a line containing the target content in the file."""
@@ -76,7 +92,9 @@ source_directory = r'C:\Users\fhulufhelo\Documents\mannatech\original'
 target_directory = r'C:\Users\fhulufhelo\Documents\mannatech\grouped'
 network_directory = r'\\10.10.10.221\Mannatech'
 target_content = '"15","ZA1"'
+email_address = 'warehouse@rawlogic.net'
 
+download_attachments_from_outlook(email_address, source_directory)
 group_notepad_files(source_directory, target_directory, target_content)
 copy_za1_files_to_network(target_directory, network_directory)
 delete_grouped_folders(target_directory)
